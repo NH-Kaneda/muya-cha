@@ -1,1 +1,35 @@
+/* ===== Muya Theme ===== */
+:root {
+  /* Brand Colors */
+  --beige: #ECD7C5;
+  --green: #275337;
+  --gold:  #c7a253;
 
+  /* Text Colors */
+  --text-main: #2f2f2f;
+  --text-sub:  #5f5f5f;
+
+  /* Background */
+  --bg-main: #f7f5f0; /* 白すぎない生成り */
+}
+
+/* ===== Base ===== */
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.9;
+}
+header.site {
+  background-color: var(--beige);
+}.brand span {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--green);
+}
+
+.brand small {
+  color: var(--text-sub);
+  letter-spacing: 0.15em;
+}
