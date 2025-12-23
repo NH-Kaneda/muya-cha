@@ -1,35 +1,91 @@
-/* ===== Muya Theme ===== */
+/* =========================
+   Muya─木芽─ Core Theme
+   ========================= */
+
 :root {
-  /* Brand Colors */
-  --beige: #ECD7C5;
-  --green: #275337;
-  --gold:  #c7a253;
+  /* Colors */
+  --paper: #FFF3E7;
+  --green: #365C3B;
+  --ink: #43311F;
+  --ink-sub: #6b5642;
+  --emotion: #C7A3A0;
 
-  /* Text Colors */
-  --text-main: #2f2f2f;
-  --text-sub:  #5f5f5f;
-
-  /* Background */
-  --bg-main: #f7f5f0; /* 白すぎない生成り */
+  /* Layout */
+  --maxw: 1120px;
+  --radius: 24px;
 }
 
-/* ===== Base ===== */
-body {
+/* ===== Reset / Base ===== */
+* { box-sizing: border-box; }
+html, body {
   margin: 0;
-  background: var(--bg-main);
-  color: var(--text-main);
+  padding: 0;
+}
+body {
+  background: var(--paper);
+  color: var(--ink);
   font-family: "Noto Sans JP", system-ui, sans-serif;
   line-height: 1.9;
 }
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== Layout ===== */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+section {
+  padding: 96px 0;
+}
+
+/* ===== Header ===== */
 header.site {
-  background-color: var(--beige);
-}.brand span {
-  font-weight: 600;
+  background: var(--paper);
+}
+.brand {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.1rem;
   letter-spacing: 0.08em;
   color: var(--green);
 }
 
-.brand small {
-  color: var(--text-sub);
-  letter-spacing: 0.15em;
+/* ===== Typography ===== */
+h1, h2, h3 {
+  font-family: "Noto Serif JP", serif;
+  color: var(--green);
+  margin: 0;
+}
+h2 {
+  font-size: clamp(22px, 3vw, 34px);
+  text-align: center;
+}
+p {
+  margin: 0 0 1.6em;
+}
+.lead {
+  max-width: 720px;
+  margin: 24px auto 0;
+  text-align: center;
+  color: var(--ink-sub);
+}
+
+/* ===== Emotion ===== */
+.emotion {
+  color: var(--emotion);
+}
+
+/* ===== Media (写真・動画枠) ===== */
+.media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 48px auto 0;
+  max-width: 880px;
 }
