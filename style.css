@@ -89,3 +89,14 @@ p {
   margin: 48px auto 0;
   max-width: 880px;
 }
+
+:root {
+  /* Muya Core Colors */
+  --brand-green: #365C3B; /* 題字・見出し・アクセント */
+  --paper: #FFF3E7;       /* 背景（紙） */
+  --ink: #43311F;         /* 本文テキスト */
+
+  /* 派生（必要になったら使う） */
+  --ink-sub: #6b5642;     /* 補足・説明 */
+  --line: rgba(54,92,59,0.18); /* 区切り線 */
+}
