@@ -145,3 +145,62 @@ p {
 .card p{ margin:0; color: rgba(67,49,31,.75); line-height:1.8; }
 
 .note{ color: rgba(67,49,31,.72); }
+
+:root {
+  /* Core Colors */
+  --brand: #365C3B;   /* 見出し・ロゴ */
+  --paper: #FFF3E7;   /* 背景 */
+  --ink:   #43311F;   /* 本文 */
+
+  /* Sub tones */
+  --ink-sub: #6b5642; /* 補足テキスト */
+  --line: rgba(54,92,59,0.18); /* 罫線 */
+
+  /* Layout */
+  --maxw: 1120px;
+  --radius: 22px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+h1, h2, h3 {
+  color: var(--brand);
+}
+
+.lead,
+.note {
+  color: var(--ink-sub);
+}
+
+.divider {
+  background: var(--line);
+}
+
+section {
+  padding: 96px 0;
+}
+
+.section-head h2 {
+  margin-top: 10px;
+}
+
+.section-head .lead {
+  margin-top: 14px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose p {
+  margin-bottom: 1.6em;
+}
+
+.cards {
+  gap: 20px;
+}
+.hero {
+  padding: 120px 0 110px;
+}
