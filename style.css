@@ -2,19 +2,6 @@
    Muya─木芽─ Core Theme
    ========================= */
 
-:root {
-  /* Colors */
-  --paper: #FFF3E7;
-  --green: #365C3B;
-  --ink: #43311F;
-  --ink-sub: #6b5642;
-  --emotion: #C7A3A0;
-
-  /* Layout */
-  --maxw: 1120px;
-  --radius: 24px;
-}
-
 /* ===== Reset / Base ===== */
 * { box-sizing: border-box; }
 html, body {
@@ -90,15 +77,15 @@ p {
   max-width: 880px;
 }
 
-:root {
-  /* Muya Core Colors */
-  --brand-green: #365C3B; /* 題字・見出し・アクセント */
-  --paper: #FFF3E7;       /* 背景（紙） */
-  --ink: #43311F;         /* 本文テキスト */
+:root{
+  --paper:#FFF3E7;
+  --brand:#365C3B;
+  --ink:#43311F;
+  --ink-sub:#6b5642;
+  --line: rgba(54,92,59,0.18);
 
-  /* 派生（必要になったら使う） */
-  --ink-sub: #6b5642;     /* 補足・説明 */
-  --line: rgba(54,92,59,0.18); /* 区切り線 */
+  --maxw:1120px;
+  --radius:22px;
 }
 /* ===== Sections ===== */
 .section-head { text-align:center; }
@@ -148,10 +135,16 @@ p {
 
 :root {
   /* Core Colors */
-  --brand: #365C3B;   /* 見出し・ロゴ */
-  --paper: #FFF3E7;   /* 背景 */
-  --ink:   #43311F;   /* 本文 */
+  :root{
+  --paper:#FFF3E7;
+  --brand:#365C3B;
+  --ink:#43311F;
+  --ink-sub:#6b5642;
+  --line: rgba(54,92,59,0.18);
 
+  --maxw:1120px;
+  --radius:22px;
+}
   /* Sub tones */
   --ink-sub: #6b5642; /* 補足テキスト */
   --line: rgba(54,92,59,0.18); /* 罫線 */
@@ -203,4 +196,59 @@ section {
 }
 .hero {
   padding: 120px 0 110px;
+}
+
+/* =========================
+   Header (logo left / nav right)
+   ========================= */
+
+header.site {
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(67,49,31,0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* ロゴ */
+.header-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 28px;   /* ←ここでサイズ調整 */
+  width: auto;
+  display: block;
+}
+
+/* ナビ */
+.header-nav {
+  display: flex;
+  gap: 22px;
+}
+
+.header-nav a {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  opacity: 0.9;
+}
+
+.header-nav a:hover {
+  opacity: 1;
+}
+
+/* スマホは一旦非表示 */
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
 }
