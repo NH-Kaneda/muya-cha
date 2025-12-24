@@ -57,7 +57,7 @@ header.site{
   align-items:center;
 }
 .header-logo img{
-  height: 50px;     /* ←ロゴの大きさはここ */
+  height: 80px;     /* ←ロゴの大きさはここ */
   width: auto;
   display:block;
 }
