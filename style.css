@@ -56,6 +56,13 @@ header.site{
   display:inline-flex;
   align-items:center;
 }
+
+.header-logo {
+  font-family: "Beth Ellen", cursive;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  color: var(--brand);
+}
 .header-logo img{
   height: 80px;     /* ←ロゴの大きさはここ */
   width: auto;
