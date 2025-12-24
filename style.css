@@ -126,6 +126,12 @@ p{ margin: 0 0 1.6em; }
 /* ===== Hero ===== */
 .hero{ padding: 120px 0 110px; }
 
+.hero .eyebrow {
+  font-family: "Beth Ellen", cursive;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+}
+
 /* ===== Media (写真枠) ===== */
 .media{
   border-radius: var(--radius);
