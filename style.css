@@ -2,93 +2,104 @@
    Muya─木芽─ Core Theme
    ========================= */
 
-/* ===== Reset / Base ===== */
-* { box-sizing: border-box; }
-html, body {
-  margin: 0;
-  padding: 0;
+:root{
+  /* Colors */
+  --paper:#FFF3E7;
+  --brand:#365C3B;      /* 見出し・アクセント */
+  --ink:#43311F;        /* 本文 */
+  --ink-sub:#6b5642;    /* 補足 */
+  --line: rgba(54,92,59,0.18);
+  --emotion:#C7A3A0;    /* （必要なら）見出しの差し色 */
+
+  /* Layout */
+  --maxw:1120px;
+  --radius:22px;
 }
-body {
+
+/* ===== Reset / Base ===== */
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
   background: var(--paper);
   color: var(--ink);
   font-family: "Noto Sans JP", system-ui, sans-serif;
   line-height: 1.9;
 }
-img {
-  max-width: 100%;
-  display: block;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
 
 /* ===== Layout ===== */
-.wrap {
+.wrap{
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 24px;
 }
-section {
-  padding: 96px 0;
-}
+section{ padding: 96px 0; }
+.center{ text-align:center; }
 
-/* ===== Header ===== */
-header.site {
+/* ===== Header (logo left / nav right) ===== */
+header.site{
   background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(67,49,31,0.08);
 }
-.brand {
-  font-family: "Noto Serif JP", serif;
-  font-size: 1.1rem;
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height: 72px;
+  gap: 16px;
+}
+.header-logo{
+  display:inline-flex;
+  align-items:center;
+}
+.header-logo img{
+  height: 28px;     /* ←ロゴの大きさはここ */
+  width: auto;
+  display:block;
+}
+.header-nav{
+  display:flex;
+  gap: 22px;
+  align-items:center;
+}
+.header-nav a{
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
-  color: var(--green);
+  color: var(--ink);
+  opacity: 0.9;
+  white-space: nowrap;
+}
+.header-nav a:hover{ opacity: 1; }
+@media (max-width: 768px){
+  .header-nav{ display:none; }
 }
 
 /* ===== Typography ===== */
-h1, h2, h3 {
+h1,h2,h3{
   font-family: "Noto Serif JP", serif;
-  color: var(--green);
+  color: var(--brand);
   margin: 0;
 }
-h2 {
+h2{
   font-size: clamp(22px, 3vw, 34px);
-  text-align: center;
+  text-align:center;
 }
-p {
-  margin: 0 0 1.6em;
-}
-.lead {
-  max-width: 720px;
-  margin: 24px auto 0;
-  text-align: center;
+p{ margin: 0 0 1.6em; }
+.lead{
+  max-width: 760px;
+  margin: 14px auto 0;
+  text-align:center;
   color: var(--ink-sub);
 }
+.note{ color: var(--ink-sub); }
+.emotion{ color: var(--emotion); }
 
-/* ===== Emotion ===== */
-.emotion {
-  color: var(--emotion);
-}
-
-/* ===== Media (写真・動画枠) ===== */
-.media {
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin: 48px auto 0;
-  max-width: 880px;
-}
-
-:root{
-  --paper:#FFF3E7;
-  --brand:#365C3B;
-  --ink:#43311F;
-  --ink-sub:#6b5642;
-  --line: rgba(54,92,59,0.18);
-
-  --maxw:1120px;
-  --radius:22px;
-}
 /* ===== Sections ===== */
-.section-head { text-align:center; }
+.section-head{ text-align:center; }
 .section-head .eyebrow{
   display:inline-block;
   font-size:.78rem;
@@ -97,158 +108,76 @@ p {
   color: rgba(67,49,31,.65);
 }
 .section-head h2{ margin-top:10px; }
-.section-head .lead{ margin-top:14px; }
 
 .divider{
-  width:72px;height:1px;
-  background: rgba(54,92,59,.35);
-  margin:40px auto;
+  width:72px;
+  height:1px;
+  background: var(--line);
+  margin: 40px auto;
 }
 
+/* ===== Hero ===== */
+.hero{ padding: 120px 0 110px; }
+
+/* ===== Media (写真枠) ===== */
+.media{
+  border-radius: var(--radius);
+  overflow:hidden;
+  margin: 48px auto 0;
+  max-width: 880px;
+}
+
+/* ===== Buttons ===== */
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:12px 16px;border-radius:999px;
-  border:1px solid rgba(54,92,59,.28);
-  color: var(--brand-green);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(54,92,59,.28);
+  color: var(--brand);
   background: rgba(255,255,255,.35);
-  font-weight:700;
+  font-weight: 700;
 }
 .btn.primary{
-  background: var(--brand-green);
+  background: var(--brand);
   color: var(--paper);
   border-color: transparent;
 }
-.cta-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:26px; }
+.cta-row{
+  display:flex;
+  gap: 12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top: 26px;
+}
 
-.cards{ display:grid; gap:18px; }
-@media(min-width:820px){ .cards{ grid-template-columns:repeat(3,1fr);} }
+/* ===== Cards ===== */
+.cards{
+  display:grid;
+  gap: 20px;
+}
+@media(min-width:820px){
+  .cards{ grid-template-columns: repeat(3,1fr); }
+}
 .card{
   background: rgba(255,255,255,.55);
   border: 1px solid rgba(67,49,31,.08);
   border-radius: 22px;
   padding: 20px;
 }
-.card h3{ margin:0 0 10px; }
-.card p{ margin:0; color: rgba(67,49,31,.75); line-height:1.8; }
+.card h3{ margin: 0 0 10px; }
+.card p{ margin: 0; color: rgba(67,49,31,.75); line-height: 1.8; }
 
-.note{ color: rgba(67,49,31,.72); }
-
-:root {
-  /* Core Colors */
-  :root{
-  --paper:#FFF3E7;
-  --brand:#365C3B;
-  --ink:#43311F;
-  --ink-sub:#6b5642;
-  --line: rgba(54,92,59,0.18);
-
-  --maxw:1120px;
-  --radius:22px;
-}
-  /* Sub tones */
-  --ink-sub: #6b5642; /* 補足テキスト */
-  --line: rgba(54,92,59,0.18); /* 罫線 */
-
-  /* Layout */
-  --maxw: 1120px;
-  --radius: 22px;
-}
-
-body {
-  background: var(--paper);
-  color: var(--ink);
-}
-
-h1, h2, h3 {
-  color: var(--brand);
-}
-
-.lead,
-.note {
-  color: var(--ink-sub);
-}
-
-.divider {
-  background: var(--line);
-}
-
-section {
-  padding: 96px 0;
-}
-
-.section-head h2 {
-  margin-top: 10px;
-}
-
-.section-head .lead {
-  margin-top: 14px;
+/* ===== Prose ===== */
+.prose{
   max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
+.prose p{ margin-bottom: 1.6em; }
 
-.prose p {
-  margin-bottom: 1.6em;
-}
-
-.cards {
-  gap: 20px;
-}
-.hero {
-  padding: 120px 0 110px;
-}
-
-/* =========================
-   Header (logo left / nav right)
-   ========================= */
-
-header.site {
-  background: var(--paper);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid rgba(67,49,31,0.08);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-}
-
-/* ロゴ */
-.header-logo {
-  display: inline-flex;
-  align-items: center;
-}
-
-.header-logo img {
-  height: 28px;   /* ←ここでサイズ調整 */
-  width: auto;
-  display: block;
-}
-
-/* ナビ */
-.header-nav {
-  display: flex;
-  gap: 22px;
-}
-
-.header-nav a {
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  color: var(--ink);
-  opacity: 0.9;
-}
-
-.header-nav a:hover {
-  opacity: 1;
-}
-
-/* スマホは一旦非表示 */
-@media (max-width: 768px) {
-  .header-nav {
-    display: none;
-  }
+/* ===== Footer ===== */
+.footer{
+  padding: 48px 0;
+  border-top: 1px solid rgba(67,49,31,0.08);
 }
