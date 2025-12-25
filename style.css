@@ -204,7 +204,7 @@ p{ margin: 0 0 1.6em; }
 
 @media(min-width: 900px){
   .hero-inner{
-    grid-template-columns: 0.9fr 1.1f; /* 左テキスト / 右画像 */
+    grid-template-columns: 0.95fr 1.05f; /* 左テキスト / 右画像 */
   }
 }
 
