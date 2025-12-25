@@ -194,3 +194,43 @@ p{ margin: 0 0 1.6em; }
   padding: 48px 0;
   border-top: 1px solid rgba(67,49,31,0.08);
 }
+
+/* ===== Hero Layout ===== */
+.hero-inner{
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+@media(min-width: 900px){
+  .hero-inner{
+    grid-template-columns: 1.1fr 0.9fr; /* 左テキスト / 右画像 */
+  }
+}
+
+/* 左側 */
+.hero-text{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* 右側：画像 */
+.hero-media{
+  border-radius: 24px;          /* ←角丸ここ */
+  overflow: hidden;
+  background: rgba(255,255,255,.35);
+  border: 1px solid rgba(67,49,31,.10);
+}
+
+.hero-media img{
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 1;
+  transition: opacity .5s ease;
+}
+
+.hero-media img.is-fading{
+  opacity: 0;
+}
