@@ -317,7 +317,7 @@ p{ margin: 0 0 1.6em; }
 
 /* ===== Sprout Image Animation ===== */
 .sprout-img{
-  width: 28px;                 /* ← 大きさはここ */
+  width: 4px;                 /* ← 大きさはここ */
   height: auto;
   margin: 18px auto 0;
   display: block;
