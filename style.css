@@ -217,7 +217,7 @@ p{ margin: 0 0 1.6em; }
 
 /* 右側：画像 */
 .hero-media{
-  border-radius: 24px;          /* ←角丸ここ */
+  border-radius: 36px;          /* ←角丸ここ */
   overflow: hidden;
   background: rgba(255,255,255,.35);
   border: 1px solid rgba(67,49,31,.10);
