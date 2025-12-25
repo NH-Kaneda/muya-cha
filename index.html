@@ -206,5 +206,21 @@
 
   }, 16000); // 16秒ごと
 </script>
+
+  <script>
+  // ロード完了後にフェードアウト（最低600msだけ表示）
+  const loader = document.getElementById('loader');
+  const started = performance.now();
+
+  window.addEventListener('load', () => {
+    const elapsed = performance.now() - started;
+    const minShow = 600; // 0.6秒だけ必ず見せる（短すぎるチラつき防止）
+    const wait = Math.max(0, minShow - elapsed);
+
+    setTimeout(() => {
+      loader.classList.add('is-hidden');
+    }, wait);
+  });
+</script>
 </body>
 </html>
