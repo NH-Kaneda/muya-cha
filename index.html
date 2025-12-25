@@ -39,24 +39,32 @@
 
 <!-- ================= Hero ================= -->
 <section class="hero" id="top">
-  <div class="wrap">
+  <div class="wrap hero-inner">
 
-    <div class="section-head">
-     <span class="eyebrow">Muya─木芽─</span>
-      <h1>
-        日本の果実と、中国茶の知恵をひとつに。<br>
-        あなたのために生まれた水果茶。
-      </h1>
-      <p class="lead">
-        “飲むリトリート”として、<br class="sp-only">
-        日常にそっと調えの時間を。
-      </p>
+    <!-- 左：テキスト -->
+    <div class="hero-text">
+      <div class="section-head">
+        <span class="eyebrow">Muya─木芽─</span>
+        <h1>
+          日本の果実と、台湾茶をひとつに。<br>
+          日本で生まれた、あなたを整える台湾式フルーツティー。
+        </h1>
+        <p class="lead">
+          “飲むリトリート”として、<br class="sp-only">
+          日常にそっと調えの時間を。
+        </p>
+      </div>
+
+      <div class="cta-row">
+        <a href="#guide" class="btn primary">選び方を見る</a>
+        <a href="#blends" class="btn">ブレンド一覧</a>
+        <a href="story.html" class="btn">Brand Story</a>
+      </div>
     </div>
 
-    <div class="cta-row">
-      <a href="#guide" class="btn primary">選び方を見る</a>
-      <a href="#blends" class="btn">ブレンド一覧</a>
-      <a href="story.html" class="btn">Brand Story</a>
+    <!-- 右：画像スライド -->
+    <div class="hero-media">
+      <img id="heroSlide" src="hero_1.jpg" alt="Muya─木芽─">
     </div>
 
   </div>
@@ -177,5 +185,26 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
+  <script>
+  const slides = [
+    "muya_top.png",
+    "dryfruts.png",
+    "hanacha.png"
+  ];
+
+  let current = 0;
+  const img = document.getElementById("heroSlide");
+
+  setInterval(() => {
+    img.classList.add("is-fading");
+
+    setTimeout(() => {
+      current = (current + 1) % slides.length;
+      img.src = slides[current];
+      img.classList.remove("is-fading");
+    }, 400);
+
+  }, 3500); // 3.5秒ごと
+</script>
 </body>
 </html>
