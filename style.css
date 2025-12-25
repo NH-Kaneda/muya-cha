@@ -230,6 +230,36 @@ p{ margin: 0 0 1.6em; }
   opacity: 1;
   transition: opacity .8s ease;
 }
+.hero-inner{
+  display: grid;
+  gap: 48px;
+}
+
+/* PC以上 */
+@media(min-width: 900px){
+  .hero-inner{
+    grid-template-columns: 0.85fr 1.15fr; /* ←左を細く */
+    align-items: center;
+  }
+}
+
+/* 左テキストを中央寄せから解除 */
+.hero-text{
+  max-width: 480px;   /* ←ここ重要。キュッの正体 */
+}
+
+.hero-text .lead{
+  text-align: left;
+  margin-left: 0;
+}
+
+.hero-text h1{
+  text-align: left;
+}
+
+.hero-text .cta-row{
+  justify-content: flex-start;
+}
 
 .hero-media img.is-fading{
   opacity: 0;
