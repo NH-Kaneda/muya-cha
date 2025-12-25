@@ -204,7 +204,7 @@ p{ margin: 0 0 1.6em; }
 
 @media(min-width: 900px){
   .hero-inner{
-    grid-template-columns: 1.1fr 0.9fr; /* 左テキスト / 右画像 */
+    grid-template-columns: 0.9fr 1.1f; /* 左テキスト / 右画像 */
   }
 }
 
@@ -228,7 +228,7 @@ p{ margin: 0 0 1.6em; }
   height: auto;
   display: block;
   opacity: 1;
-  transition: opacity .5s ease;
+  transition: opacity .8s ease;
 }
 
 .hero-media img.is-fading{
